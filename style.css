@@ -1,0 +1,177 @@
+/* Cape Control website: the game's comic ink, its night blue, caption yellow, cyan and red, and its fonts (Bangers and Barlow, SIL OFL 1.1, served from here). */
+@font-face {
+	font-family: "Bangers";
+	src: url("fonts/Bangers-Regular.ttf") format("truetype");
+	font-weight: 400;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Barlow";
+	src: url("fonts/Barlow-Regular.ttf") format("truetype");
+	font-weight: 400;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Barlow";
+	src: url("fonts/Barlow-SemiBold.ttf") format("truetype");
+	font-weight: 600;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Barlow Condensed";
+	src: url("fonts/BarlowCondensed-ExtraBold.ttf") format("truetype");
+	font-weight: 800;
+	font-display: swap;
+}
+
+:root {
+	--bg: #161a2c;
+	--panel: #23273d;
+	--panel-hi: #2e3350;
+	--ink: #0a0b10;
+	--line: #545a82;
+	--text: #f4f1e8;
+	--muted: #a9aec6;
+	--yellow: #ffd23f;
+	--cyan: #35c9e8;
+	--red: #ff4b3e;
+	--paper: #f4f1e8;
+}
+
+* { box-sizing: border-box; }
+
+html { background: var(--bg); }
+
+body {
+	margin: 0;
+	color: var(--text);
+	background-color: var(--bg);
+	background-image: radial-gradient(rgba(53, 201, 232, 0.07) 1.5px, transparent 1.6px);
+	background-size: 14px 14px;
+	font-family: "Barlow", "Segoe UI", sans-serif;
+	font-size: 19px;
+	line-height: 1.55;
+}
+
+main {
+	max-width: 760px;
+	margin: 28px auto 0;
+	padding: 32px 26px 30px;
+	background: var(--panel);
+	border: 3px solid var(--ink);
+	box-shadow: 8px 8px 0 var(--ink);
+}
+
+a { color: var(--cyan); }
+
+h1, h2, h3, .logo, .button, .caption { font-family: "Bangers", Impact, sans-serif; font-weight: 400; letter-spacing: 0.04em; }
+
+h1, h2, h3 { line-height: 1.15; }
+
+h1 { font-size: 40px; margin: 0 0 10px; color: var(--yellow); text-shadow: 3px 3px 0 var(--ink); }
+h2 { font-size: 29px; margin: 36px 0 8px; color: var(--yellow); text-shadow: 2px 2px 0 var(--ink); }
+h3 { font-size: 23px; margin: 24px 0 4px; color: var(--cyan); }
+
+strong { font-weight: 600; }
+
+.muted { color: var(--muted); }
+
+.logo {
+	display: inline-block;
+	color: var(--yellow);
+	font-size: 68px;
+	line-height: 1;
+	text-decoration: none;
+	text-shadow: 4px 4px 0 var(--ink);
+	-webkit-text-stroke: 2px var(--ink);
+}
+.logo.small { font-size: 32px; text-shadow: 2px 2px 0 var(--ink); -webkit-text-stroke: 1px var(--ink); }
+
+.tagline {
+	display: inline-block;
+	margin: 14px 0 26px;
+	padding: 4px 14px;
+	color: var(--ink);
+	background: var(--paper);
+	border: 3px solid var(--ink);
+	font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+	font-weight: 800;
+	font-size: 22px;
+	letter-spacing: 0.03em;
+	text-transform: uppercase;
+	transform: rotate(-1.5deg);
+}
+
+.hero { text-align: center; }
+.hero img {
+	display: block;
+	width: 192px;
+	height: 192px;
+	margin: 0 auto 20px;
+	border: 4px solid var(--ink);
+	border-radius: 22%;
+	box-shadow: 6px 6px 0 var(--ink);
+}
+
+.card {
+	background: var(--panel-hi);
+	border: 3px solid var(--ink);
+	box-shadow: 5px 5px 0 var(--ink);
+	padding: 18px 20px;
+	margin: 22px 0;
+}
+.card > :first-child { margin-top: 0; }
+.card > :last-child { margin-bottom: 0; }
+
+.caption {
+	display: inline-block;
+	margin: 0 0 8px;
+	padding: 2px 10px;
+	color: var(--ink);
+	background: var(--yellow);
+	border: 2px solid var(--ink);
+	font-size: 20px;
+}
+
+.button {
+	display: inline-block;
+	min-width: 240px;
+	padding: 12px 26px;
+	margin: 6px;
+	color: var(--ink);
+	background: var(--yellow);
+	border: 3px solid var(--ink);
+	box-shadow: 5px 5px 0 var(--ink);
+	font-size: 26px;
+	text-align: center;
+	text-decoration: none;
+}
+.button.disabled { color: var(--text); background: var(--panel-hi); pointer-events: none; }
+
+nav.top { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 18px; }
+
+footer {
+	max-width: 760px;
+	margin: 0 auto;
+	padding: 24px 16px 40px;
+	color: var(--muted);
+	font-size: 16px;
+	text-align: center;
+}
+footer a { color: var(--text); margin: 0 8px; }
+
+table { width: 100%; border-collapse: collapse; font-size: 17px; }
+th, td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 2px solid var(--ink); }
+th { color: var(--muted); font-weight: 400; }
+
+@media (max-width: 520px) {
+	body { font-size: 18px; }
+	main { margin: 0; border-width: 0 0 3px; box-shadow: none; padding: 26px 16px; }
+	.logo { font-size: 48px; }
+	.logo.small { font-size: 26px; }
+	h1 { font-size: 32px; }
+	h2 { font-size: 25px; }
+	.button { width: 100%; min-width: 0; margin: 6px 0; }
+	table { font-size: 16px; }
+	th, td { padding: 8px 6px; }
+}
